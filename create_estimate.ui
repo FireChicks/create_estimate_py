@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>917</width>
+    <height>668</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>901</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="main_page">
+     <widget class="QPushButton" name="btn_move_exe">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>80</y>
+        <width>250</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>변환</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_move_trans">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>320</y>
+        <width>250</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> 주소지정 파일 만들기</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_move_setting">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>310</y>
+        <width>250</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>설정</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="exe_page">
+     <widget class="QPushButton" name="btn_set_trans">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>변환파일 지정</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_set_input">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>190</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>input 파일 지정</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_set_output">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>190</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> output 파일 지정</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="trans_file_name">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>401</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 4px dashed #aaa;
+font-size: 12pt;</string>
+      </property>
+      <property name="text">
+       <string>여기에 변환파일의 이름이 표시됩니다.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="input_file_name">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>240</y>
+        <width>421</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 4px dashed #aaa;
+font-size: 12pt;</string>
+      </property>
+      <property name="text">
+       <string>여기에 input 파일의 이름이 표시됩니다.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="output_file_name">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>240</y>
+        <width>441</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 4px dashed #aaa;
+font-size: 12pt;</string>
+      </property>
+      <property name="text">
+       <string>여기에 output 파일의 이름이 표시됩니다.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_exe">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>490</y>
+        <width>211</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>변환</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_return_main">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>580</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>뒤로</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_result_txt">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>560</y>
+        <width>561</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_ex_output_name">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>570</y>
+        <width>531</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="create_trans_page">
+     <widget class="QPushButton" name="btn_input_trans">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>파일 가져오기</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tbl_trans">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>871</width>
+        <height>431</height>
+       </rect>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::DragDrop</enum>
+      </property>
+      <property name="defaultDropAction">
+       <enum>Qt::CopyAction</enum>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectItems</enum>
+      </property>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>시트</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>열</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>행</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>문단</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>시트</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>열</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>행</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="btn_output_trans">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>120</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Excel로 출력하기</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_add_row">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>120</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>행추가</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_return_previous">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>120</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>뒤로가기</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_del_row">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>120</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>행삭제</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_return_main_2">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>580</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>메인으로</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_selected_file">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>481</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 4px dashed #aaa;
+font-size: 12pt;</string>
+      </property>
+      <property name="text">
+       <string>여기에 가져온 파일명이 표기됩니다.</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="setting_page">
+     <widget class="QPushButton" name="btn_chn_suffix">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>110</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>설정</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_chn_suf_num">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>250</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>_(2)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>431</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>접미어 설정</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2. 숫자 방식 지정</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_chn_suf_num_2">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>250</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>_2</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_chn_suf_num_3">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>250</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="txt_suffix">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>110</y>
+        <width>451</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>현재 설정된 접미어는</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lbl_save_name_txt">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>150</y>
+        <width>271</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>txtlb_save_name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>1. 직접 설정</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_return_main_3">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>580</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>메인으로</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>917</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
