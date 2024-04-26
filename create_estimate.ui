@@ -36,6 +36,14 @@
         <height>150</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>28</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>변환</string>
       </property>
@@ -49,8 +57,17 @@
         <height>150</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
-       <string> 주소지정 파일 만들기</string>
+       <string> 주소지정 파일
+ 만들기</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_move_setting">
@@ -61,6 +78,14 @@
         <width>250</width>
         <height>150</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>28</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>설정</string>
@@ -77,6 +102,14 @@
         <height>51</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>변환파일 지정</string>
       </property>
@@ -89,6 +122,14 @@
         <width>141</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>input 파일 지정</string>
@@ -103,6 +144,14 @@
         <height>41</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string> output 파일 지정</string>
       </property>
@@ -115,6 +164,12 @@
         <width>401</width>
         <height>121</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">border: 4px dashed #aaa;
@@ -136,6 +191,12 @@ font-size: 12pt;</string>
         <height>161</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">border: 4px dashed #aaa;
 font-size: 12pt;</string>
@@ -155,6 +216,12 @@ font-size: 12pt;</string>
         <width>441</width>
         <height>161</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">border: 4px dashed #aaa;
@@ -176,6 +243,14 @@ font-size: 12pt;</string>
         <height>111</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>31</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>변환</string>
       </property>
@@ -188,6 +263,14 @@ font-size: 12pt;</string>
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>뒤로</string>
@@ -202,6 +285,11 @@ font-size: 12pt;</string>
         <height>41</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -214,6 +302,11 @@ font-size: 12pt;</string>
         <width>531</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+       </font>
       </property>
       <property name="text">
        <string/>
@@ -230,6 +323,13 @@ font-size: 12pt;</string>
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>파일 가져오기</string>
       </property>
@@ -242,6 +342,11 @@ font-size: 12pt;</string>
         <width>871</width>
         <height>431</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+       </font>
       </property>
       <property name="dragDropMode">
        <enum>QAbstractItemView::DragDrop</enum>
@@ -306,6 +411,13 @@ font-size: 12pt;</string>
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Excel로 출력하기</string>
       </property>
@@ -318,6 +430,13 @@ font-size: 12pt;</string>
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>행추가</string>
@@ -332,6 +451,13 @@ font-size: 12pt;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>뒤로가기</string>
       </property>
@@ -344,6 +470,13 @@ font-size: 12pt;</string>
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>행삭제</string>
@@ -358,6 +491,13 @@ font-size: 12pt;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>메인으로</string>
       </property>
@@ -370,6 +510,12 @@ font-size: 12pt;</string>
         <width>481</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">border: 4px dashed #aaa;
@@ -390,6 +536,13 @@ font-size: 12pt;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>설정</string>
       </property>
@@ -403,6 +556,11 @@ font-size: 12pt;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+       </font>
+      </property>
       <property name="text">
        <string>_(2)</string>
       </property>
@@ -413,8 +571,16 @@ font-size: 12pt;</string>
         <x>10</x>
         <y>20</y>
         <width>431</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>접미어 설정</string>
@@ -429,6 +595,13 @@ font-size: 12pt;</string>
         <height>16</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>2. 숫자 방식 지정</string>
       </property>
@@ -441,6 +614,11 @@ font-size: 12pt;</string>
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+       </font>
       </property>
       <property name="text">
        <string>_2</string>
@@ -455,6 +633,11 @@ font-size: 12pt;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+       </font>
+      </property>
       <property name="text">
        <string>2</string>
       </property>
@@ -468,6 +651,11 @@ font-size: 12pt;</string>
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+       </font>
+      </property>
      </widget>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
@@ -477,6 +665,13 @@ font-size: 12pt;</string>
         <width>171</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>현재 설정된 접미어는</string>
@@ -504,6 +699,13 @@ font-size: 12pt;</string>
         <height>16</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>1. 직접 설정</string>
       </property>
@@ -516,6 +718,13 @@ font-size: 12pt;</string>
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Malgun Gothic</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>메인으로</string>

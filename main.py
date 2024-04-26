@@ -125,7 +125,7 @@ class WindowClass(QMainWindow, form_class):
     def load_file_add(self):
         # 파일 다이얼로그 열기
         self.transAddFilePath, _ = self.file_dialog.getOpenFileName(self, "주소 지정 파일 가져오기", "",
-                                                                      "All Files (*);;CSV Files (*.csv);;Excel Files (*.xlsx)")
+                                                                      "All Files (*);;CSV Files (*.csv);;Excel Files (*.xlsx);;Excel Files (*xls)")
 
         # 파일 경로를 QLabel에 표시
         if self.transAddFilePath:
@@ -141,7 +141,7 @@ class WindowClass(QMainWindow, form_class):
     def load_file_inp(self):
         # 파일 다이얼로그 열기
         self.transInpFilePath , _ = self.file_dialog.getOpenFileName(self, "입력 파일 가져오기", "",
-                                                                      "All Files (*);;CSV Files (*.csv);;Excel Files (*.xlsx)")
+                                                                      "All Files (*);;CSV Files (*.csv);;Excel Files (*.xlsx);;Excel Files (*xls)")
 
         # 파일 경로를 QLabel에 표시
         if self.transInpFilePath:
@@ -150,7 +150,7 @@ class WindowClass(QMainWindow, form_class):
     def load_file_out(self):
         # 파일 다이얼로그 열기
         self.transOutFilePath , _ = self.file_dialog.getOpenFileName(self, "출력 파일 가져오기", "",
-                                                                      "All Files (*);;CSV Files (*.csv);;Excel Files (*.xlsx)")
+                                                                      "All Files (*);;CSV Files (*.csv);;Excel Files (*.xlsx);;Excel Files (*xls)")
 
         # 파일 경로를 QLabel에 표시
         if self.transOutFilePath :
@@ -176,9 +176,11 @@ class WindowClass(QMainWindow, form_class):
         if urls:
             url = urls[0]
             print("Dropped files:", url)
+            fileName = url.split('/')[-1]
+
             #xlsx 파일인지 확인
-            if url.split('.')[-1] != 'xlsx' :
-                QMessageBox.warning(self, '지정되지 않은 파일 입력', 'xlsx 파일만 입력해주세요.', QMessageBox.Ok)
+            if not (fileName.split('.')[-1] == 'xls' or fileName.split('.')[-1] == 'xlsx') :
+                QMessageBox.warning(self, '지정되지 않은 파일 입력', 'xlsx 파일과 xls파일만 입력해주세요.', QMessageBox.Ok)
                 return
             else:
                 self.transAddFilePath = url
@@ -198,10 +200,11 @@ class WindowClass(QMainWindow, form_class):
 
         if urls:
             url = urls[0]
-            print("Dropped files:", url)
-            #xlsx 파일인지 확인
-            if url.split('.')[-1] != 'xlsx' :
-                QMessageBox.warning(self, '지정되지 않은 파일 입력', 'xlsx 파일만 입력해주세요.', QMessageBox.Ok)
+            fileName = url.split('/')[-1]
+
+            # xlsx 파일인지 확인
+            if not (fileName.split('.')[-1] == 'xls' or fileName.split('.')[-1] == 'xlsx'):
+                QMessageBox.warning(self, '지정되지 않은 파일 입력', 'xlsx 파일과 xls파일만 입력해주세요.', QMessageBox.Ok)
                 return
             else:
                 self.transInpFilePath = url
@@ -217,9 +220,11 @@ class WindowClass(QMainWindow, form_class):
         if urls:
             url = urls[0]
             print("Dropped files:", url)
-            #xlsx 파일인지 확인
-            if url.split('.')[-1] != 'xlsx' :
-                QMessageBox.warning(self, '지정되지 않은 파일 입력', 'xlsx 파일만 입력해주세요.', QMessageBox.Ok)
+            fileName = url.split('/')[-1]
+
+            # xlsx 파일인지 확인
+            if not (fileName.split('.')[-1] == 'xls' or fileName.split('.')[-1] == 'xlsx'):
+                QMessageBox.warning(self, '지정되지 않은 파일 입력', 'xlsx 파일과 xls파일만 입력해주세요.', QMessageBox.Ok)
                 return
             else:
                 self.transOutFilePath = url
@@ -293,6 +298,7 @@ class WindowClass(QMainWindow, form_class):
                 opWb.save(outputFileDir)
                 self.lbl_result_txt.setText("성공적으로 파일 " + outputFileName.split('/')[-1] + "를 저장하였습니다.")
                 self.ex_output_name()
+                open_file_in_system(outputFileDir)
 
             except Exception as e:
                 print(e)
@@ -564,6 +570,15 @@ def resource_path(*relative_Path_AND_File):
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, *relative_Path_AND_File)
+
+#파일 실행 함수
+def open_file_in_system(file_path):
+    try:
+        os.system(f'start {file_path}')
+        print(f"파일 '{file_path}'이(가) 시스템에서 열렸습니다.")
+    except Exception as e:
+        print(f"파일을 열던 중 오류가 발생했습니다: {e}")
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
