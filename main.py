@@ -224,6 +224,8 @@ class WindowClass(QMainWindow, form_class):
             else:
                 self.transOutFilePath = url
                 self.output_file_name.setText(self.transOutFilePath.split('/')[-1])
+                # 예상 출력명 계산
+                self.ex_output_name()
 
 
         # 파일 놓기
@@ -249,31 +251,51 @@ class WindowClass(QMainWindow, form_class):
         else:
             result = []
             try:
-                outputFileName = self.transOutFilePath.split('.')[0] + self.create_suffix()
+                outputFileName = self.transOutFilePath.split('/')[-1].split('.')[0] + self.create_suffix()
+                outputFileDir = ''
+
+                #경로 구하는 과정
+                for dir in self.transOutFilePath.split('/')[0:-1]:
+                    outputFileDir  = outputFileDir + dir + '/'
+                outputFileDir = outputFileDir + outputFileName
+
                 opWb = load_workbook(self.transOutFilePath)
-                opWb.save(outputFileName)
+                opWb.save(outputFileDir)
                 for idx, row in self.transAddDF.iterrows():
                     ipWb = load_workbook(self.transInpFilePath)
-                    opWb = load_workbook(outputFileName)
+                    opWb = load_workbook(outputFileDir)
 
                     ipWs = ipWb[row['시트']]
-                    opWs = opWb[row['시트.1']]
+                    try:
+                        opWs = opWb[row['시트.1']]
+                    except KeyError:
+                        print(row['시트.1'] + " 시트가 존재하지 않습니다.")
+                        continue
 
                     ipIdx = row['열'] + row['행']
                     opIdx = row['열.1'] + row['행.1']
+                    nIdx = row['문단']
 
-                    inputValue = ipWs[ipIdx].value
+                    inputValue = ''
+                    inputValues = str(ipWs[ipIdx].value).split('\n')
+
+                    if len(inputValues) > 1:
+                        inputValue = inputValues[int(nIdx) - 1]
+                    else:
+                        inputValue = inputValues[0]
 
                     # INPUT에 값이 없을때는 처리하지 않음
                     if inputValue != None :
                         opWs[opIdx] = str(inputValue)
 
-                    opWb.save(outputFileName)
+                    opWb.save(outputFileDir)
 
-                opWb.save(outputFileName)
+                opWb.save(outputFileDir)
                 self.lbl_result_txt.setText("성공적으로 파일 " + outputFileName.split('/')[-1] + "를 저장하였습니다.")
+                self.ex_output_name()
 
-            except:
+            except Exception as e:
+                print(e)
                 QMessageBox.warning(self, '경고', '예상하지 못한 오류가 발생하였습니다.', QMessageBox.Ok)
                 return
 
@@ -393,6 +415,14 @@ class WindowClass(QMainWindow, form_class):
         self.tbl_trans.clear()
         self.tbl_trans.setRowCount(0)
         self.tbl_trans.setColumnCount(len(df.columns))
+        # 새로운 열 개수
+        new_column_count = len(add_cols)
+
+        # 테이블 열 개수 변경
+        self.tbl_trans.setColumnCount(new_column_count)
+
+        # 새로운 열 라벨 설정
+        self.tbl_trans.setHorizontalHeaderLabels(add_cols)
 
         # 테이블에 데이터 추가
         for row_index, row_data in df_drop_na.iterrows():
@@ -434,6 +464,14 @@ class WindowClass(QMainWindow, form_class):
                 self.tbl_trans.clear()
                 self.tbl_trans.setRowCount(0)
                 self.tbl_trans.setColumnCount(len(df.columns))
+                # 새로운 열 개수
+                new_column_count = len(add_cols)
+
+                # 테이블 열 개수 변경
+                self.tbl_trans.setColumnCount(new_column_count)
+
+                # 새로운 열 라벨 설정
+                self.tbl_trans.setHorizontalHeaderLabels(add_cols)
 
                 # 테이블에 데이터 추가
                 for row_index, row_data in df_drop_na.iterrows():
@@ -453,16 +491,16 @@ class WindowClass(QMainWindow, form_class):
 
         if file_path:
             # 행 인덱스를 숫자로 설정하여 데이터프레임 생성
-            df = pd.DataFrame(
-                columns=[self.tbl_trans.horizontalHeaderItem(i).text() for i in range(self.tbl_trans.columnCount())],
-                index=range(1, self.tbl_trans.rowCount() + 1)  # 1부터 시작하는 숫자로 행 인덱스 생성
-            )
+            wb = load_workbook("./address_header.xlsx")
 
+            # 기존 시트 선택 또는 새 시트 생성
+            ws = wb.active
             for row in range(self.tbl_trans.rowCount()):
-                row_data = [self.tbl_trans.item(row, col).text() for col in range(self.tbl_trans.columnCount())]
-                df.loc[row + 1] = row_data  # 각 행의 데이터를 추가할 때 인덱스 조정
+                row_data = [row + 1]  # 인덱스는 1부터 시작
+                row_data.extend([self.tbl_trans.item(row, col).text() for col in range(self.tbl_trans.columnCount())])
+                ws.append(row_data)
 
-            df.to_excel(file_path, index_label="Index", startrow=1)
+            wb.save(file_path)
 
 
     def ex_output_name(self):

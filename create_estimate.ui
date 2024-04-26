@@ -209,8 +209,8 @@ font-size: 12pt;</string>
      <widget class="QLabel" name="lbl_ex_output_name">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>570</y>
+        <x>230</x>
+        <y>490</y>
         <width>531</width>
         <height>31</height>
        </rect>
@@ -283,17 +283,17 @@ font-size: 12pt;</string>
       </column>
       <column>
        <property name="text">
-        <string>시트</string>
+        <string>시트.1</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>열</string>
+        <string>열.1</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>행</string>
+        <string>행.1</string>
        </property>
       </column>
      </widget>
